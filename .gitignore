@@ -1,6 +1,7 @@
 .env
-.data/api_credentials.json
 .idea/*
 .data/*
 *.bat
 testing.py
+.ipynb_checkpoints/*
+*.ipynb

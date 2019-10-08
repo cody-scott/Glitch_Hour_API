@@ -39,14 +39,12 @@ def view_submit_invoices():
     if not _valid_secret_key('POST'):
         return "Secret key not valid"
 
-    sheet_id = request.json.get('sheet_id')
-    service = google_service_api.get_service()
-
-    data = request.json.get('data', [])
-    # processing.submit_invoice(service, sheet_id, data)
+    _json_data = request.json
+    processing.log_hours(_json_data)
 
     return "Success"
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run()
+    # app.run(host='0.0.0.0')
